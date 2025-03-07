@@ -23,9 +23,10 @@ const TOWER_SPOTS = [
 const gameState = {
     round: 1,
     enemiesSpawned: 0,
-    gold: 0,
+    gold: 30, // Start with 30 gold
     enemies: [],
     towers: [],
     projectiles: [],
     enemiesDied: 0,
+    heroHealth: 5,
 };

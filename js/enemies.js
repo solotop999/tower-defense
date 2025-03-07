@@ -7,7 +7,7 @@ function createEnemy() {
         element: enemyDiv,
         position: { x: PATH[0].x, y: PATH[0].y },
         targetIndex: 1,
-        speed: 1,
+        speed: 2, // Already set to 2
         health: 100,
         isBoss: false,
         goldValue: 5,
@@ -30,7 +30,7 @@ function createBoss() {
         element: bossDiv,
         position: { x: PATH[0].x, y: PATH[0].y },
         targetIndex: 1,
-        speed: 0.5,
+        speed: 2, // Already set to 2
         health: 500,
         isBoss: true,
         goldValue: 50,
@@ -50,6 +50,7 @@ function updateEnemies() {
             enemy.element.style.left = enemy.position.x + 'px';
             enemy.element.style.top = enemy.position.y + 'px';
         } else {
+            gameState.heroHealth--;
             enemy.element.remove();
             gameState.enemies = gameState.enemies.filter(e => e !== enemy);
         }
